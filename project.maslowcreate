@@ -1,12 +1,50 @@
 {
     "atomType": "Molecule",
-    "name": "Arc with Extrusion",
+    "name": "Molecule",
     "x": 0,
     "y": 0,
-    "uniqueID": 836525,
-    "ioValues": [],
+    "ioValues": [
+        {
+            "name": "arc",
+            "ioValue": 10
+        },
+        {
+            "name": "Input",
+            "ioValue": 10
+        }
+    ],
     "topLevel": true,
     "allAtoms": [
+        {
+            "atomType": "Input",
+            "name": "Input",
+            "x": 0.013333333333333334,
+            "y": 0.36443148688046645,
+            "uniqueID": 153657,
+            "ioValues": []
+        },
+        {
+            "atomType": "Input",
+            "name": "arc",
+            "x": 0.013333333333333334,
+            "y": 0.5510204081632653,
+            "uniqueID": 783030,
+            "ioValues": []
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.3701447067783702,
+            "y": 0.4635568513119533,
+            "uniqueID": 455543,
+            "ioValues": [
+                {
+                    "name": "arc",
+                    "ioValue": 10
+                }
+            ],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(thickness,width,arc){\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
+        },
         {
             "atomType": "Output",
             "name": "Output",
@@ -15,6 +53,16 @@
             "ioValues": []
         }
     ],
-    "allConnectors": [],
-    "fileTypeVersion": 1
+    "allConnectors": [
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "arc",
+            "ap2Primary": false,
+            "ap1ID": 783030,
+            "ap2ID": 455543
+        }
+    ],
+    "fileTypeVersion": 1,
+    "filetypeVersion": 1,
+    "circleSegmentSize": 2
 }
